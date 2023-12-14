@@ -1,0 +1,286 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    background: linear-gradient(45deg, 	
+    #007FFF,#3299CC, #4D4DFF);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.container{
+    background: white;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Bebas Neue', sans-serif;
+    width: 352px;
+    height: 80px;
+    border-radius: 10px;
+    column-gap: 2.5rem;
+    transition: 1s linear;
+}
+
+.sun{
+    background: linear-gradient(45deg, #FEDE98, #FEDE98,#FEC333, #FECE5D);
+    position: absolute;
+    overflow: hidden;
+    display: flex;
+    opacity: 0;
+    bottom: 56%;
+    left: 50%;
+    width: 255px; 
+    height: 255px;
+    border-radius: 100%;
+    animation: transitionMoonSun 3.5s linear forwards;
+    animation-play-state: paused;
+}
+
+
+@keyframes transitionMoonSun{
+    0%{
+        bottom: 56%;
+        left: 50%;
+    }
+
+    20%{
+        bottom: 58%;
+    }
+
+    50%{
+        bottom: 60%;
+    }
+
+    70%{
+       bottom: 60%;
+    }
+
+    100%{
+        bottom: 56%;
+        left: -25%;
+        background: #54595e;
+        transition: background 5s linear;
+    }
+}
+
+.moon{
+    background: #54595e;
+    position: absolute;
+    overflow: hidden;
+    bottom: 56%;
+    right: 50%;
+    width: 255px; 
+    height: 255px;
+    border-radius: 100%;
+    animation: transitionSunMoon 3.5s linear forwards;
+    animation-play-state: paused;
+}
+
+@keyframes transitionSunMoon{
+    0%{
+        bottom: 56%;
+        left: -25%;
+    }
+
+    20%{
+        bottom: 58%;
+    }
+
+    50%{
+        bottom: 60%;
+    }
+
+    70%{
+       bottom: 60%;
+    }
+
+    100%{
+        bottom: 56%;
+        left: 50%;
+        background:  #FECE5D;
+        transition: background 5s linear;
+    }
+}
+
+
+.search-box{
+    position: relative;
+    height: min-content;
+    align-items: center;
+    z-index: 2;
+    width: 90%;
+    top: 75px;
+    left: 5px;
+}
+
+.search-box input{
+    position: relative;
+    background: transparent;
+    color: black;
+    border: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    left: 12px;
+    font-size: 23px;
+    font-weight: 1000;
+    height: 30px;
+    width: 80%;
+    padding-right: 20px;
+}
+
+.search-box input::placeholder{
+    border: none;
+    color: black;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 1000;
+}
+
+.search-box #search-btn{
+    background: rgb(65, 62, 62);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+}
+
+.search-box .fa-location-dot{
+    font-size: 20px;
+}
+
+
+.details-City{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 1;
+    width: 200px;
+    height: 50%;
+    bottom: 30px;
+    transition: 0.5s linear;
+}
+
+.not-found-img{
+    position: relative;
+    display: none;
+    width: 400px;
+    top: 25px;
+}
+
+.city-not-found{
+    position: relative;
+    font-size: 30px;
+    bottom: 30px;
+    left: 119px;
+    opacity: 0;
+}
+
+.details-City{
+    top: 4px;
+    right: 10px;
+}
+
+.details-City .temperature{
+    position: relative;
+    top: 8px;
+    left: 10px;
+    font-size: 50px;
+    font-weight: 500;
+}
+
+.max-min-temp{
+    opacity: 0;
+}
+
+.details-City .max-temp-text{   
+    position: absolute;
+    text-align: justify;
+    bottom: 120px;
+    right: 10px;
+    transition: 0.3s linear;
+}
+
+.details-City .min-temp-text{
+    position: absolute;
+    text-align: justify;
+    right: 13px;
+    bottom: 107px;
+    transition: 0.33s linear;
+}
+
+.details-City .climate{
+    position: relative;
+    top: px;
+    left: 5px;
+    font-size: 20px;
+    transition: 0.3s linear;
+}
+
+.descriptions{
+    position: relative;
+    top: 60px;
+    opacity: 0;
+    transition: 0.5s linear;
+}
+
+.descriptions .humidty-text{
+    position: relative;
+    right: 85px;
+    bottom: 10px;
+    font-size: 16px;
+}
+
+.descriptions #humidty-icon{
+    position: relative;
+    top: 15px;
+    font-size: 30px;
+    right: 124px;
+}
+
+.descriptions .wind-text{
+    position: relative;
+    bottom: 60px;
+    left: 100px;
+    font-size: 16px;
+}
+
+.descriptions #wind-icon{
+    position: relative;
+    bottom: 35px;
+    left: 60px;
+    font-size: 30px;
+}
+
+.descriptions .humidty{
+    position: absolute;
+    bottom: 100%;
+    left: 5px;
+    font-size: 30px;
+    transition: 1s linear;
+}
+
+.descriptions .wind{
+    white-space: nowrap;
+    position: absolute;
+    bottom: 100%;
+    right: -4px;
+    font-size: 25px;
+    transition: 1s linear;
+}
