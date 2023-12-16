@@ -90,7 +90,7 @@ async function ApiData(){
                     }
                 }
             }
-        }                    
+        }
+        console.log('JSON data:', json);                    
     })
-
 }
